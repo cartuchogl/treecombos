@@ -38,12 +38,16 @@ function TreeCombos(options) {
     this.options = $.extend(defaults, options);
 }
 
+TreeCombos.prototype._onchange = function(event) {
+  this.update();
+};
+
 TreeCombos.prototype.create = function() {
   this._current_level = this.options.tree.children('li');
   if (this._select == null) {
     this._select = $(document.createElement('select'));
     this._select.addClass('level' + this.options.level);
-    this._select.change(this._onchange.bind(this));
+    this._select.change($.proxy(this, '_onchange'));
     // TODO: support for mode
     this.options.destination.append(this._select);
   } else {
@@ -60,10 +64,6 @@ TreeCombos.prototype.create = function() {
     kk.append(opt);
   });
   this.destroyChilds(true);
-};
-
-TreeCombos.prototype._onchange = function(event) {
-  this.update();
 };
 
 TreeCombos.prototype.destroyChilds = function(first) {
