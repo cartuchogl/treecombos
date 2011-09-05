@@ -1,0 +1,19 @@
+Script: treecombos.js and treecombos.jquery.js
+	MooTools and Jquery ul li trees to comboboxes
+
+License:
+	MIT
+
+Version:
+	0.1
+
+Copyright:
+	Copyright (c) 20011 [Carlos Bolaños](http://wocp.net).
+
+Dependencies:
+	- MooTools Core 1.2.3 (http://mootools.net)
+	or
+	- Jquery (tested on 1.6.2)
+	
+Notes:
+  - Demos included for mootools and jquery.
